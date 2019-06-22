@@ -34,7 +34,7 @@ Most of the code in this project has been written to the ES6 JavaScript specific
 
 
 
-#How to launch the app locally?
+# How to launch the app locally?
 
 Using Python HTTP server In the project folder, start up a simple HTTP server to serve up the site files on your local computer. Python has some simple tools to do this, and you don't even need to know Python. For most people, it's already installed on your computer.
 
