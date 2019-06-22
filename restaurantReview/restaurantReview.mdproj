@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Default</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ItemType>GenericProject</ItemType>
+    <ProjectGuid>{D4AEFC04-E221-4616-AE0F-3DA5659A0279}</ProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Default|AnyCPU' ">
+    <OutputPath>.\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="CODEOWNERS" />
+    <None Include="README.md" />
+    <None Include="index.html" />
+    <None Include="restaurant.html" />
+    <None Include="css\styles.css" />
+    <None Include="data\restaurants.json" />
+    <None Include="img\1.jpg" />
+    <None Include="img\10.jpg" />
+    <None Include="img\2.jpg" />
+    <None Include="img\3.jpg" />
+    <None Include="img\4.jpg" />
+    <None Include="img\5.jpg" />
+    <None Include="img\6.jpg" />
+    <None Include="img\7.jpg" />
+    <None Include="img\8.jpg" />
+    <None Include="img\9.jpg" />
+    <None Include="js\dbhelper.js" />
+    <None Include="js\main.js" />
+    <None Include="js\restaurant_info.js" />
+    <None Include="js\indexController.js" />
+    <None Include="sw.js" />
+  </ItemGroup>
+</Project>
