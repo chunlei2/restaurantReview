@@ -10,7 +10,6 @@
     <OutputPath>.\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="CODEOWNERS" />
     <None Include="README.md" />
     <None Include="index.html" />
     <None Include="restaurant.html" />
