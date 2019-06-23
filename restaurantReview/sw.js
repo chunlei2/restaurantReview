@@ -24,7 +24,6 @@ self.addEventListener('install', function(event) {
                 './img/9.jpg',
                 './img/10.jpg',
                 'https://unpkg.com/leaflet@1.3.1/dist/leaflet.css',
-                '//normalize-css.googlecode.com/svn/trunk/normalize.css',
                 'https://unpkg.com/leaflet@1.3.1/dist/leaflet.js',
                   'restaurant.html?id=1',
                   'restaurant.html?id=2',
@@ -58,10 +57,36 @@ self.addEventListener('activate', function(event) {
 })
 
 self.addEventListener('fetch', function(event) {
-    event.respondWith(
-        caches.match(event.request)
-        .then(function(response) {
-            return response || fetch(event.request);
-        })
+  event.respondWith(
+    caches.match(event.request)
+      .then(function(response) {
+        // Cache hit - return response
+        if (response) {
+          return response;
+        }
+
+        return fetch(event.request).then(
+          function(response) {
+            // Check if we received a valid response
+            if(!response || response.status !== 200 || response.type !== 'basic') {
+              return response;
+            }
+
+            // IMPORTANT: Clone the response. A response is a stream
+            // and because we want the browser to consume the response
+            // as well as the cache consuming the response, we need
+            // to clone it so we have two streams.
+            var responseToCache = response.clone();
+
+            caches.open(staticCacheName)
+              .then(function(cache) {
+                cache.put(event.request, responseToCache);
+              });
+
+            return response;
+          }
+        );
+      })
     );
 });
+
