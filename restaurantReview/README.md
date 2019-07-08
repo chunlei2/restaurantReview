@@ -1,5 +1,8 @@
 ﻿# Mobile Web Specialist Certification Course
 ---
+
+Open it [here](https://chunlei2.github.io)
+
 #### _Three Stage Course Material Project - Restaurant Reviews_
 
 ## Project Overview: Stage 1
